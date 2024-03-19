@@ -6,11 +6,9 @@ const {
 
 // * Вариант решения через рекурсию
 function getJobDayRec(date) {
-    const offset = date.getTimezoneOffset();
 
-    const nextWorkDay = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+    const nextWorkDay = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
     nextWorkDay.setDate(date.getDate() + 1);
-    nextWorkDay.setMinutes(date.getMinutes() - offset);
     const dayOfWeek = nextWorkDay.getDay();
 
     if (dayOfWeek === SATURDAY_AS_NUMBER || dayOfWeek === SUNDAY_AS_NUMBER) {

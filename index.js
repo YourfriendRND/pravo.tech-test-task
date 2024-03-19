@@ -1,1 +1,1 @@
-// entry point
+// * entry point
